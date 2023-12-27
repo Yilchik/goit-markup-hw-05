@@ -741,9 +741,7 @@ img {
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox.visually-hidden:checked
-  + .form-privacy-user
-  > .form-privacy-checkbox {
+.checkbox:checked + .form-privacy-user > .form-privacy-checkbox {
   opacity: 1;
   background-color: #404bbf;
   border: none;
