@@ -597,13 +597,12 @@ img {
 
 .modal-btn-icon:hover,
 .modal-btn-icon:focus {
-  fill: #f4f4fd;
+  fill: #ffffff;
 }
 
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: #404bbf;
-  border-color: #404bbf;
   border: none;
   fill: #ffffff;
 }
@@ -730,8 +729,8 @@ img {
   justify-content: center;
   width: 16px;
   height: 16px;
-  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
   margin-right: 8px;
   font-size: 12px;
   line-height: 1.17;
