@@ -461,6 +461,7 @@ img {
 
 .p-subscribe {
   margin-bottom: 16px;
+  font-weight: 500;
 }
 
 .footer-social {
@@ -501,6 +502,7 @@ img {
   line-height: 2;
   letter-spacing: 0.04em;
   padding: 8px 16px;
+  background-color: transparent;
 }
 
 .subscribe-form {
@@ -512,7 +514,6 @@ img {
   padding: 8px 24px;
   justify-content: center;
   align-items: center;
-  gap: 16px;
   border-radius: 4px;
   background: #4d5ae5;
   color: #fff;
@@ -520,10 +521,15 @@ img {
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0.04em;
+  min-width: 165px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
 }
 
 .subscribe-form-icon {
   fill: white;
+  margin-left: 16px;
 }
 
 .backdrop {
@@ -536,7 +542,8 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: rgba(46, 47, 66, 0.4);
-  transition: opacity 300ms ease-in, visibility 300ms ease-in;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -549,13 +556,19 @@ img {
 }
 
 .modal {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
   width: 408px;
   min-height: 584px;
   border-radius: 4px;
   background: #fcfcfc;
   padding: 24px;
   padding-top: 72px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn {
@@ -571,17 +584,27 @@ img {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn-icon {
   stroke: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-btn-icon:hover,
+.modal-btn-icon:focus {
+  fill: #f4f4fd;
 }
 
 .modal-btn:hover,
 .modal-btn:focus {
-  fill: #f4f4fd;
   background-color: #404bbf;
   border-color: #404bbf;
+  border: none;
 }
 
 .modal-caption {
@@ -596,10 +619,10 @@ img {
 .form-label {
   display: block;
   color: #8e8f99;
-  line-height: 1.16;
   letter-spacing: 0.04em;
   margin-bottom: 4px;
   font-size: 12px;
+  line-height: 1.17;
 }
 
 .field {
@@ -618,6 +641,8 @@ img {
   border: 1px solid rgba(46, 47, 66, 0.4);
   padding-left: 38px;
   outline: none;
+  background-color: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-input:focus {
@@ -631,6 +656,7 @@ img {
 
 .field-form-icon:focus {
   border-color: #4d5ae5;
+  margin-bottom: 16px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -652,12 +678,13 @@ img {
   height: 120px;
   border-radius: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
+  color: rgba(46, 47, 66, 0.4);
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   padding: 8px 16px;
-  margin-bottom: 16px;
   outline: transparent;
+  background-color: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -679,40 +706,48 @@ img {
   margin-top: 24px;
 }
 
-.form-agreement {
+.form-privacy {
   display: block;
   margin-bottom: 24px;
-  font-size: 12px;
-  letter-spacing: 0.04em;
   user-select: none;
 }
 
-.form-agreement-checkbox {
+.form-privacy-checkbox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 16px;
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
+  border-radius: 2px;
   margin-right: 8px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-agreement-icon {
+.form-privacy-icon {
   opacity: 0;
   fill: #f4f4fd;
 }
 
-.form-agreement-link {
+.form-privacy-link {
   color: #4d5ae5;
   text-decoration-line: underline;
 }
 
-.checkbox:checked + .form-agreement-checkbox {
+.checkbox:checked + .form-privacy-checkbox {
   background-color: #404bbf;
   border-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
 }
 
-.checkbox:checked + .form-agreement-checkbox > .form-agreement-icon {
+.checkbox:checked + .form-privacy-checkbox > .form-privacy-icon {
   opacity: 1;
 }

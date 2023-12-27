@@ -450,6 +450,7 @@
             <label class="subscribe-form-field">
               <input
                 class="subscribe-form-input"
+                name="user-email"
                 type="email"
                 placeholder="E-mail" />
             </label>
@@ -466,7 +467,7 @@
     <div class="backdrop is-open">
       <div class="modal">
         <button class="modal-btn" type="button" aria-label="Modal close button">
-          <svg class="modal-btn-icon" width="24" height="24">
+          <svg class="modal-btn-icon" width="8" height="8">
             <use
               href="./images/icons.svg#icon-close"
               width="8"
@@ -529,27 +530,23 @@
               name="user-comment"
               rows="5"
               placeholder="Text input"></textarea>
-            <!-- <div class="form-checkbox">
-              <input name="checkbox" type="checkbox" value="accept" />
-              <p class="form-checkbox-p">
-                I accept the terms and conditions of the
-                <span class="form-privacy-policy">Privacy Policy</span>
-              </p>
-            </div> -->
-            <label class="form-agreement">
-              <input
-                class="checkbox visually-hidden"
-                type="checkbox"
-                name="user-agreement"
-                value="false"
-                checked />
-              <span class="form-agreement-checkbox">
-                <svg class="form-agreement-icon" width="10" height="8">
+          </div>
+          <div class="form-privacy">
+            <input
+              class="checkbox visually-hidden"
+              id="user-privacy"
+              type="checkbox"
+              name="user-privacy"
+              value="true"
+              checked />
+            <label class="form-privacy-user" for="user-privacy">
+              I accept the terms and conditions of the
+              <span class="form-privacy-checkbox">
+                <svg class="form-privacy-icon" width="10" height="8">
                   <use href="./images/icons.svg#icon-checkbox"></use>
                 </svg>
               </span>
-              I accept the terms and conditions of the
-              <a class="form-agreement-link" href="">Privacy Policy</a>
+              <a class="form-privacy-link" href="">Privacy Policy</a>
             </label>
           </div>
           <button type="submit" class="button form-btn">Send</button>
