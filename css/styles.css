@@ -605,6 +605,7 @@ img {
   background-color: #404bbf;
   border-color: #404bbf;
   border: none;
+  fill: #ffffff;
 }
 
 .modal-caption {
@@ -746,19 +747,23 @@ img {
   fill: #f4f4fd;
 }
 
-.form-privacy-icon:hover,
-.form-privacy-icon:focus {
-  fill: #ffffff;
-}
-
 .form-privacy-link {
   color: #4d5ae5;
   text-decoration-line: underline;
+}
+
+.checkbox:checked
+  + .form-privacy-user
+  > .form-privacy-checkbox
+  > .form-privacy-icon {
+  background-color: #404bbf;
+  border: none;
+  opacity: 1;
+  fill: #f4f4fd;
 }
 
 .checkbox:checked + .form-privacy-user > .form-privacy-checkbox {
   background-color: #404bbf;
   border: none;
   opacity: 1;
-  fill: #f4f4fd;
 }
